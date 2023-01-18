@@ -13,7 +13,7 @@ public extension LeetCode {
     class Hard: NSObject {
         
         public enum CodeName {
-            case none
+            case medianSortedArrays(array1: [Int], array2: [Int])
         }
         
         static public let shared = Hard()
@@ -21,20 +21,23 @@ public extension LeetCode {
     }
 }
 
-// MARK: - 簡單題 (測試)
+// MARK: - 困難題 (測試)
 public extension LeetCode.Hard {
     
     /// 題目測試
     func testCode(by codeName: LeetCode.Hard.CodeName) {
         
         switch codeName {
-        case .none: let result = LeetCode.shared.resultTest { none() }; wwPrint(result)
+        case .medianSortedArrays(let array1, let array2): let result = LeetCode.shared.resultTest { medianSortedArrays(array1: array1, array2: array2) }; wwPrint(result)
         }
     }
 }
 
-// MARK: - 簡單題 (困難)
+// MARK: - 困難題 (程式)
 extension LeetCode.Hard {
     
-    func none() -> String { return "太難了" }
+    /// [尋找兩個正序陣列的中位數 => 時間複雜度：O(log(m+n))](https://leetcode.cn/problems/median-of-two-sorted-arrays/)
+    func medianSortedArrays(array1: [Int], array2: [Int]) -> Double {
+        fatalError()
+    }
 }

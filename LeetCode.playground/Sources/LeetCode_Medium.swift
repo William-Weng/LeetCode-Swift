@@ -14,6 +14,7 @@ public extension LeetCode {
         
         public enum CodeName {
             case reverse(number: Int)
+            case maxArea(heights: [Int])
         }
         
         static public let shared = Medium()
@@ -29,6 +30,7 @@ public extension LeetCode.Medium {
         
         switch codeName {
         case .reverse(let number): let result = LeetCode.shared.resultTest { reverse(number: number) }; wwPrint(result)
+        case .maxArea(let heights): let result = LeetCode.shared.resultTest { maxArea(heights: heights) }; wwPrint(result)
         }
     }
 }
@@ -39,15 +41,36 @@ extension LeetCode.Medium {
     /// [007.整數反轉](https://leetcode.cn/problems/reverse-integer/)
     func reverse(number: Int) -> Int {
         
-        guard let string = Optional.some(String("\(number)".reversed())),
-              let reverseNumber = Int(string)
-        else {
-            return 0
-        }
+        guard let reverseNumber = Int(String("\(number)".reversed())) else { return 0 }
 
         if (reverseNumber < Int32.min) { return 0 }
         if (reverseNumber > Int32.max) { return 0 }
         
         return reverseNumber
+    }
+    
+    /// [011.盛最多水的容器 => 不能漏水](https://leetcode-cn.com/problems/container-with-most-water/)
+    func maxArea(heights: [Int]) -> Int {
+        
+        var index = (start: 0, end: heights.count - 1)
+        var area = (width: 0, height: 0, max: 0)
+        
+        while (index.end > index.start) {
+            
+            area.width = index.end - index.start
+            
+            if (heights[index.start] < heights[index.end]) {
+                area.height = heights[index.start]
+                index.start += 1
+            } else {
+                area.height = heights[index.end]
+                index.end -= 1
+            }
+            
+            let _area = area.width * area.height
+            if (_area > area.max) { area.max = _area }
+        }
+        
+        return area.max
     }
 }

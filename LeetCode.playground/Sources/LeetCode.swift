@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - 自定義的Print
 public func wwPrint<T>(_ msg: T, file: String = #file, method: String = #function, line: Int = #line) {
-    Swift.print("🚩 \((file as NSString).lastPathComponent)：\(line) - \(method) ✅ \(msg)")
+    Swift.print("🚩 \((file as NSString).lastPathComponent)：\(line) - \(method) \t✅ \(msg)")
 }
 
 // MARK: - LeetCode (單例)

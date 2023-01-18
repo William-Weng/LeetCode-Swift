@@ -15,6 +15,7 @@ public extension LeetCode {
         public enum CodeName {
             case twoSum(numbers: [Int], target: Int)
             case isPalindrome(number: Int)
+            case removeDuplicates(numbers: [Int])
         }
         
         static public let shared = Easy()
@@ -31,6 +32,7 @@ public extension LeetCode.Easy {
         switch codeName {
         case .twoSum(let numbers, let target): let result = LeetCode.shared.resultTest { twoSum(numbers: numbers, target: target) }; wwPrint(result)
         case .isPalindrome(let number): let result = LeetCode.shared.resultTest { isPalindrome(number: number) }; wwPrint(result)
+        case .removeDuplicates(let numbers): let result = LeetCode.shared.resultTest { removeDuplicates(numbers: numbers) }; wwPrint(result)
         }
     }
 }
@@ -76,5 +78,12 @@ extension LeetCode.Easy {
         
         if (leftText != String(rightText.reversed())) { return false }
         return true
+    }
+    
+    /// [026.刪除有序陣列中的重複項](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
+    func removeDuplicates(numbers: [Int]) -> [Int] {
+        let set = Set(numbers)
+        let newNumbers = Array(set).sorted()
+        return newNumbers
     }
 }
