@@ -8,9 +8,9 @@ import UIKit
 //LeetCode.Easy.shared.testCode(by: .isPalindrome(number: 123454321))
 //LeetCode.Easy.shared.testCode(by: .isPalindrome(number: 9876556789))
 
-//LeetCode.Medium.shared.testCode(by: .reverse(number: 12345))
-//LeetCode.Medium.shared.testCode(by: .reverse(number: 1234567890))
-//LeetCode.Medium.shared.testCode(by: .reverse(number: 12345678987654321))
+LeetCode.Medium.shared.testCode(by: .reverse(number: -12345))
+LeetCode.Medium.shared.testCode(by: .reverse(number: 1234567890))
+LeetCode.Medium.shared.testCode(by: .reverse(number: 12345678987654321))
 
 //LeetCode.Medium.shared.testCode(by: .maxArea(heights: [1]))
 //LeetCode.Medium.shared.testCode(by: .maxArea(heights: [2, 6]))

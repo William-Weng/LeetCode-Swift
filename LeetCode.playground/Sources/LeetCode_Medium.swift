@@ -41,8 +41,12 @@ extension LeetCode.Medium {
     /// [007.整數反轉](https://leetcode.cn/problems/reverse-integer/)
     func reverse(number: Int) -> Int {
         
-        guard let reverseNumber = Int(String("\(number)".reversed())) else { return 0 }
-
+        let isNegative = number < 0
+        let _number = !isNegative ? number : -number
+        
+        guard var reverseNumber = Int(String("\(_number)".reversed())) else { return 0 }
+        reverseNumber = !isNegative ? reverseNumber : -reverseNumber
+        
         if (reverseNumber < Int32.min) { return 0 }
         if (reverseNumber > Int32.max) { return 0 }
         
