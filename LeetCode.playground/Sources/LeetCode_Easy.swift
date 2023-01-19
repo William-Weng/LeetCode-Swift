@@ -97,6 +97,7 @@ extension LeetCode.Easy {
     /// [0014.最長公共前綴](https://leetcode.cn/problems/longest-common-prefix/)
     /// => LeetCode.Easy.shared.testCode(by: .longestCommonPrefix(strings: ["flower", "flow", "flight"]))
     /// => LeetCode.Easy.shared.testCode(by: .longestCommonPrefix(strings: ["dog", "racecar", "car"]))
+    /// => LeetCode.Easy.shared.testCode(by: .longestCommonPrefix(strings: ["flower", "flow", "first"]))
     func longestCommonPrefix(strings: [String]) -> String {
         
         guard !strings.isEmpty else { return "" }
@@ -115,9 +116,12 @@ extension LeetCode.Easy {
             let prefixString = prefixArray.joined(separator: "")
             var hasPrefix = false
             
-            strings.forEach { hasPrefix = $0.hasPrefix(prefixString) }
+            for string in strings {
+                hasPrefix = string.hasPrefix(prefixString)
+                if (!hasPrefix) { prefixArray.removeLast(); break }
+            }
             
-            if (!hasPrefix) { prefixArray.removeLast(); break }
+            if (!hasPrefix) { break }
         }
         
         return prefixArray.joined(separator: "")

@@ -1,17 +1,24 @@
 import Foundation
 
-protocol ListNodeValueProtocol {
-   associatedtype ListNodeValueType
-   var value: ListNodeValueType { get set }
-}
-
-public class ListNode<T>: ListNodeValueProtocol {
+public class ListNode<T> {
     
-    public var value: Any
-    public var next: ListNode?
+    var value: T
+    var next: ListNode?
     
-    public init<T>(_ value: T, next: ListNode?) {
+    init(_ value: T, next: ListNode?) {
         self.value = value
         self.next = next
+    }
+    
+    public static func build(by values: [T]) -> ListNode? {
+     
+        if (values.isEmpty) { return nil }
+        
+        var _values = values
+        let value = _values.popLast()
+        
+        wwPrint(value)
+        
+        return nil
     }
 }
