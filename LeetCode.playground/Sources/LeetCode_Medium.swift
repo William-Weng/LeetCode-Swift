@@ -38,7 +38,10 @@ public extension LeetCode.Medium {
 // MARK: - 中等題 (程式)
 extension LeetCode.Medium {
     
-    /// [007.整數反轉](https://leetcode.cn/problems/reverse-integer/)
+    /// [0007.整數反轉](https://leetcode.cn/problems/reverse-integer/)
+    /// => LeetCode.Medium.shared.testCode(by: .reverse(number: -12345))
+    /// => LeetCode.Medium.shared.testCode(by: .reverse(number: 1234567890))
+    /// => LeetCode.Medium.shared.testCode(by: .reverse(number: 12345678987654321))
     func reverse(number: Int) -> Int {
         
         let isNegative = number < 0
@@ -53,7 +56,10 @@ extension LeetCode.Medium {
         return reverseNumber
     }
     
-    /// [011.盛最多水的容器 => 不能漏水](https://leetcode-cn.com/problems/container-with-most-water/)
+    /// [0011.盛最多水的容器 => 不能漏水](https://leetcode-cn.com/problems/container-with-most-water/)
+    /// => LeetCode.Medium.shared.testCode(by: .maxArea(heights: [1]))
+    /// => LeetCode.Medium.shared.testCode(by: .maxArea(heights: [2, 6]))
+    /// => LeetCode.Medium.shared.testCode(by: .maxArea(heights: [1, 8, 6, 2, 5, 4, 8, 3, 7]))
     func maxArea(heights: [Int]) -> Int {
         
         var index = (start: 0, end: heights.count - 1)

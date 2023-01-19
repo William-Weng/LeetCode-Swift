@@ -36,7 +36,7 @@ public extension LeetCode.Hard {
 // MARK: - 困難題 (程式)
 extension LeetCode.Hard {
     
-    /// [尋找兩個正序陣列的中位數 => 時間複雜度：O(log(m+n))](https://leetcode.cn/problems/median-of-two-sorted-arrays/)
+    /// [0004.尋找兩個正序陣列的中位數 => 時間複雜度：O(log(m+n))](https://leetcode.cn/problems/median-of-two-sorted-arrays/)
     func medianSortedArrays(array1: [Int], array2: [Int]) -> Double {
         fatalError()
     }

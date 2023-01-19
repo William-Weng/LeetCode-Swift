@@ -12,7 +12,7 @@ public func wwPrint<T>(_ msg: T, file: String = #file, method: String = #functio
     Swift.print("🚩 \((file as NSString).lastPathComponent)：\(line) - \(method) \t✅ \(msg)")
 }
 
-// MARK: - LeetCode (單例)
+// MARK: - [LeetCode (單例)](https://www.liwenzhou.com/posts/Go/LeetCode/)
 public class LeetCode: NSObject {
     
     static let shared = LeetCode()
